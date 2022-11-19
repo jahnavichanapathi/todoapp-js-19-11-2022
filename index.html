@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<script src="https:\\kit.fontawesome.com/ea6d4fec5e.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.but{
+			background-color: lightblue;
+			padding: 0.2%;
+			font-size: 1rem;
+			border-radius: 5px;
+
+			
+		}
+		#new{
+			padding: 0.2%;
+			font-size:1rem;
+			background-color: lightpink;
+			color:white;
+			border-radius: 5px;
+
+		}
+		.sp{
+			background-color:violet;
+			border: 7px;
+			color: white;
+			font-size: 1rem;
+		}
+		.text{
+			border:2px;
+			margin: 2% 5% 6% 2%;
+		
+		}
+		body{
+			background-image:url(https://cdn.shopify.com/s/files/1/0100/6082/files/glacierbg.jpg?v=1613677492);
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		.listtype{
+			list-style:none ;
+		}
+		
+	</style>
+</head>
+<body >
+
+	<input id="new" type="text" placeholder="enter a message"/>
+	<ul>
+	</ul>
+	<button  class="but" onclick="todo()">submit</button>
+
+	<script type="text/javascript" >
+		function todo(){
+				let newtodo=document.getElementById("new").value,todolist=[]
+				if (newtodo===""){
+					alert("enter a todo value")
+				}
+				//console.log(newtodo)
+				todolist.push(newtodo)
+				console.log(todolist);
+				add(newtodo)
+				document.getElementById("new").value=""
+			}
+		function add(newvalue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`
+			<span class="sp">${newvalue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>
+			`
+			li.classList.add("listtype")
+			ul.appendChild(li)
+		}
+		
+	</script>
+
+
+</body>
+</html>
